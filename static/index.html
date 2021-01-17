@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: ghostwhite;
+        margin: 8px;
+      }
+      main {
+        margin: 0 auto;
+        width: fit-content;
+      }
+      #overlay {
+        background-color: white;
+        background-image: url("draw.png");
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: 0 2px 8px 4px rgba(0, 0, 0, 0.2);
+      }
+      #color {
+        margin-bottom: 8px;
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <input type="color" id="color" value="#D00000" /><br />
+      <canvas id="overlay" width="1280" height="720"></canvas>
+    </main>
+
+    <script type="module" src="scripts/main.js"></script>
+  </body>
+</html>
