@@ -1,5 +1,5 @@
 import { draw, clearLines, getPoint } from "./canvas.js";
-import { initColorPicker } from "./colors.js";
+import { getSize, getColor } from "./colors.js";
 import { minDistance } from "./constants.js";
 import { initWebSocket } from "./websocket.js";
 
@@ -7,8 +7,6 @@ const canvas = document.getElementById("overlay");
 const ctx = canvas.getContext("2d");
 
 const socket = initWebSocket(onMessage);
-
-const getColor = initColorPicker();
 
 let lines = [];
 let line;
@@ -83,6 +81,7 @@ canvas.addEventListener("pointerdown", function (event) {
   drawing = true;
   line = {
     color: getColor(),
+    size: getSize(),
     points: [getPoint(event)],
   };
   lines.push(line);

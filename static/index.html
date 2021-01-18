@@ -1,32 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=740, initial-scale=1" />
-    <style>
-      body {
-        background-color: ghostwhite;
-        margin: 8px;
-      }
-      main {
-        margin: 0 auto;
-        width: fit-content;
-      }
-      #overlay {
-        background-color: white;
-        background-image: url("draw.png");
-        border: 1px solid rgba(0, 0, 0, 0.5);
-        box-shadow: 0 2px 8px 4px rgba(0, 0, 0, 0.2);
-        touch-action: none;
-      }
-      #color {
-        margin-bottom: 8px;
-        width: 100px;
-      }
-    </style>
+    <meta name="viewport" content="width=1300, initial-scale=1" />
+    <link href="styles.css" rel="stylesheet">
   </head>
   <body>
     <main>
-      <input type="color" id="color" value="#D00000" /><br />
+      <div id="settings">
+        <input type="color" id="color" value="#D00000" />
+        <div><input type="radio" name="size" id="size-small" value="small"><label for="size-small">S</label></input><input type="radio" name="size" id="size-medium" value="medium" checked><label for="size-medium">M</label></input><input type="radio" name="size" value="large" id="size-large"><label for="size-large">L</label></input></div>
+      </div>
       <canvas id="overlay" width="1280" height="720"></canvas>
     </main>
 

@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: whitesmoke;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 8px;
+}
+main {
+  margin: 0 auto;
+  width: fit-content;
+}
+#overlay {
+  background-color: white;
+  background-image: url("draw.png");
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.2);
+  touch-action: none;
+}
+#settings {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+#color {
+  width: 100px;
+  height: 27px;
+}
+input[type="radio"] {
+  display: none;
+}
+input[type="radio"] + label {
+  background-color: #eeeeee;
+  color: rgba(0, 0, 0, 0.6);
+  display: inline-block;
+  font-size: 15px;
+  line-height: 15px;
+  text-align: center;
+  padding: 5px 16px;
+  margin-right: -1px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  transition: all 0.1s ease-in-out;
+}
+input[type="radio"] + label:first-of-type {
+  border-radius: 3px 0 0 3px;
+}
+input[type="radio"] + label:last-of-type {
+  border-radius: 0 3px 3px 0;
+}
+input[type="radio"]:checked + label {
+  background-color: grey;
+  box-shadow: none;
+  color: white;
+}

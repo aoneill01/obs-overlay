@@ -1,5 +1,5 @@
-import { colorForDelta } from "./colors.js";
-import { endFadeSeconds, lineWidth } from "./constants.js";
+import { colorForDelta, getSize } from "./colors.js";
+import { endFadeSeconds } from "./constants.js";
 
 export function draw(canvas, ctx, lines, timestamp) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -16,7 +16,7 @@ export function draw(canvas, ctx, lines, timestamp) {
       ctx.strokeStyle = colorForDelta(delta, line.color, line.isOther);
       ctx.lineJoin = "round";
       ctx.lineCap = "round";
-      ctx.lineWidth = lineWidth;
+      ctx.lineWidth = line.size;
       ctx.stroke();
     }
   }
