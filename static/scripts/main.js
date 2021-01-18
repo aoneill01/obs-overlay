@@ -41,13 +41,13 @@ function onMessage(event) {
   }
 }
 
-canvas.addEventListener("mousemove", function (event) {
+canvas.addEventListener("pointermove", function (event) {
   if (drawing) {
     addPoint(getPoint(event));
   }
 });
 
-canvas.addEventListener("mousedown", function (event) {
+canvas.addEventListener("pointerdown", function (event) {
   drawing = true;
   line = {
     color: getColor(),
@@ -56,7 +56,7 @@ canvas.addEventListener("mousedown", function (event) {
   lines.push(line);
 });
 
-canvas.addEventListener("mouseup", function (event) {
+canvas.addEventListener("pointerup", function (event) {
   if (!drawing) return;
   drawing = false;
   addPoint(getPoint(event));
