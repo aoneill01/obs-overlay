@@ -41,7 +41,10 @@ input[type="radio"] + label {
   margin-right: -1px;
   border: 1px solid rgba(0, 0, 0, 0.4);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
-  transition: all 0.1s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+input[type="radio"] + label:hover {
+  background-color: #e0e0e0;
 }
 input[type="radio"] + label:first-of-type {
   border-radius: 3px 0 0 3px;
