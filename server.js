@@ -8,6 +8,8 @@ const app = express();
 const wsInstance = enableWs(app);
 
 app.ws("/lines", (ws) => {
+  console.log("Connected");
+  ws.on("close", () => console.log("Disconnected"));
   ws.on("message", (message) => {
     console.log("Received message");
     wsInstance.getWss().clients.forEach((client) => {

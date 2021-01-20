@@ -1,7 +1,22 @@
 export function initWebSocket(onMessage) {
-  const socket = new WebSocket(`ws://${location.host}/lines`);
+  let socket;
 
-  socket.addEventListener("message", onMessage);
+  function init(reconnectDelay = 500) {
+    socket = new WebSocket(`ws://${location.host}/lines`);
 
-  return socket;
+    socket.addEventListener("message", onMessage);
+    socket.addEventListener("open", () => {
+      reconnectDelay = 500;
+      console.log("Socket opened");
+    });
+    socket.addEventListener("close", () => {
+      console.log("Socket closed");
+      setTimeout(init, reconnectDelay, reconnectDelay * 2);
+    });
+    socket.addEventListener("error", console.error);
+  }
+
+  init();
+
+  return (message) => socket.send(message);
 }

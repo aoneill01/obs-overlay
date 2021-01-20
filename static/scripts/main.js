@@ -6,7 +6,7 @@ import { initWebSocket } from "./websocket.js";
 const canvas = document.getElementById("overlay");
 const ctx = canvas.getContext("2d");
 
-const socket = initWebSocket(onMessage);
+const send = initWebSocket(onMessage);
 
 let lines = [];
 let line;
@@ -93,5 +93,5 @@ canvas.addEventListener("pointerup", function (event) {
   addPoint(getPoint(event));
   line.timestamp = event.timeStamp;
 
-  socket.send(formatLineForTransfer(line));
+  send(formatLineForTransfer(line));
 });
