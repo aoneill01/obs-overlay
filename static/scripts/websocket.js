@@ -6,7 +6,7 @@ export function initWebSocket(onMessage) {
 
     socket.addEventListener("message", onMessage);
     socket.addEventListener("open", () => {
-      reconnectDelay = 500;
+      reconnectDelay = 100;
       console.log("Socket opened");
     });
     socket.addEventListener("close", () => {
