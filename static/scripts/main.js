@@ -1,7 +1,9 @@
 import { draw, clearLines, getPoint } from "./canvas.js";
-import { getSize, getColor } from "./colors.js";
+import { getSize, getColor, initColor } from "./colors.js";
 import { minDistance } from "./constants.js";
 import { initWebSocket } from "./websocket.js";
+
+initColor();
 
 const canvas = document.getElementById("overlay");
 const ctx = canvas.getContext("2d");
