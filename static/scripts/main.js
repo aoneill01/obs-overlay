@@ -72,12 +72,16 @@ function formatLineForTransfer(line) {
 }
 
 canvas.addEventListener("pointermove", function (event) {
+  event.preventDefault();
+
   if (drawing) {
     addPoint(getPoint(event));
   }
 });
 
 canvas.addEventListener("pointerdown", function (event) {
+  event.preventDefault();
+
   drawing = true;
   line = {
     color: getColor(),
@@ -87,10 +91,10 @@ canvas.addEventListener("pointerdown", function (event) {
   lines.push(line);
 });
 
-canvas.addEventListener("pointerup", function (event) {
+window.addEventListener("pointerup", function (event) {
   if (!drawing) return;
+
   drawing = false;
-  addPoint(getPoint(event));
   line.timestamp = event.timeStamp;
 
   send(formatLineForTransfer(line));

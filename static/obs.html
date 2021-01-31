@@ -2,27 +2,32 @@
 <html>
   <head>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
       body {
         margin: 0;
         transform: scaleX(-1);
       }
       p {
-        bottom: 8px;
-        color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(255, 255, 255, 0.7);
+        bottom: 0;
+        border-top-right-radius: 16px;
+        color: rgba(0, 0, 0, 0.8);
         font-family: "Roboto Slab", serif;
-        font-size: 42px;
-        left: 8px;
-        margin: 0;
+        font-size: 64px;
+        left: 0;
+        margin: 0 auto;
+        padding-right: 16px;
         position: fixed;
         text-align: center;
-        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
-        width: 100%;
+        width: max-content;
+      }
+      .link {
+        text-decoration: underline;
       }
     </style>
   </head>
   <body>
-    <p>✏️bit.ly/3r7BJch</p>
+    <p>✏️ <span class="link">bit.ly/3r7BJch</span></p>
     <canvas id="overlay" width="1280" height="720"></canvas>
 
     <script type="module" src="scripts/obs.js"></script>
